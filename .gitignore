@@ -1,0 +1,92 @@
+# =============================================================
+# .gitignore — 24AI636 DL Scaffolded Project
+# =============================================================
+
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.so
+
+# ── Virtual Environments ──────────────────────────────────────
+venv/
+env/
+.env/
+ENV/
+.venv/
+
+# ── Jupyter Notebooks checkpoints ────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Model Checkpoints (large binary files) ───────────────────
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.h5
+
+# ── Training Outputs ─────────────────────────────────────────
+runs/
+outputs/
+logs/
+wandb/
+mlruns/
+
+# ── Generated Plots/Images (reproducible from code) ──────────
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+loss_curves.png
+pca_latent.png
+tsne_latent.png
+generated_images.png
+reconstructed_images.png
+ablation_results.png
+confusion_matrix.png
+per_class_metrics.png
+hyperparam_results.png
+
+# ── Dataset (too large for GitHub, stored on Kaggle) ─────────
+data/
+datasets/
+UCF-101/
+UCF101/
+*.avi
+*.mp4
+*.mov
+
+# ── IDE / Editor ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Build / Distribution ─────────────────────────────────────
+dist/
+build/
+*.egg-info/
+*.egg
+MANIFEST
+
+# ── Testing ───────────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+*.cover
+.tox/
+
+# ── Temporary files ───────────────────────────────────────────
+tmp/
+temp/
+*.tmp
+*.log
