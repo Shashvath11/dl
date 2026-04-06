@@ -24,9 +24,6 @@ ENV/
 
 # ── Model Checkpoints (large binary files) ───────────────────
 checkpoints/
-*.pth
-*.pt
-*.ckpt
 *.pkl
 *.h5
 
