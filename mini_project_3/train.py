@@ -62,10 +62,8 @@ def train_autoencoder(
     # Adam optimizer: adaptive learning rate, standard for autoencoders
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=1e-5)
 
-    # Learning rate scheduler: reduce on plateau to fine-tune convergence
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', patience=5, factor=0.5
-    )
+    # Learning rate scheduler: halve LR every 10 epochs for stable convergence
+    scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.5)
 
     ae_losses = []
     best_loss = float('inf')
@@ -96,7 +94,7 @@ def train_autoencoder(
 
         avg_loss = epoch_loss / num_batches
         ae_losses.append(avg_loss)
-        scheduler.step(avg_loss)
+        scheduler.step()
 
         if epoch % 5 == 0 or epoch == 1:
             print(f"  Epoch [{epoch:3d}/{epochs}] | Recon Loss: {avg_loss:.6f}")
