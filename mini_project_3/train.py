@@ -64,7 +64,7 @@ def train_autoencoder(
 
     # Learning rate scheduler: reduce on plateau to fine-tune convergence
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', patience=5, factor=0.5, verbose=True
+        optimizer, mode='min', patience=5, factor=0.5
     )
 
     ae_losses = []

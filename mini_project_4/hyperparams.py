@@ -281,7 +281,7 @@ def get_lr_scheduler(optimizer, scheduler_type: str = 'step') -> object:
 
     elif scheduler_type == 'plateau':
         scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-            optimizer, mode='min', patience=5, factor=0.5, verbose=True
+            optimizer, mode='min', patience=5, factor=0.5
         )
         print("[LR Scheduler] ReduceOnPlateau: reduce when val_loss plateaus")
 
